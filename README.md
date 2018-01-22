@@ -1,7 +1,32 @@
 # ember-data-benchmark-suite
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A small demo app for stress-testing ember-data and ember-data addons.
+
+Currently Requires at least `ember-data 3.1.0 Canary`
+
+## Benchmarking
+
+1. Install the versions of ember-data and any desired ember-data addons
+     you wish to include in the test.
+
+2. Serve the app with instrumentation enabled in production mode.
+     
+     ```cli
+     ember s -e production --instrument
+     ```
+     
+     Uglification is disabled by default to make the app more explorable.
+
+3. Configure the benchmarks you wish to run.
+     In `benchmarks/config.js`, configure the slug(s)
+     you wish to benchmark, and the number of runs to
+     complete.
+     
+4. Run the desired benchmarks
+
+     ```cli
+     node ./benchmarks
+     ```
 
 ## Prerequisites
 
