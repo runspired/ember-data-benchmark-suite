@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
+<h2>{{#link-to 'index'}}Ember Data Performance Test Suite{{/link-to}}</h2>
+<ul>
+  <li>
+    {{#link-to 'query'}}Query{{/link-to}}
+  </li>
+  <li>
+    {{#link-to 'query' (query-params
+      modelName='complex'
+      limit=400
+      included='foo,baz'
+      eagerRelationships=false)
+    }}2800 models, lazy relationship{{/link-to}}
+  </li>
+  <li>
+    {{#link-to 'query' (query-params
+      modelName='complex'
+      limit=400
+      included='foo,baz'
+      eagerRelationships=true)
+    }}2800 models, eager relationship{{/link-to}}
+  </li>
+</ul>
 {{outlet}}
